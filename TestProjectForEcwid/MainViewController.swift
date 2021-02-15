@@ -8,9 +8,9 @@
 import UIKit
 
 class MainViewController: UITableViewController {
+        
+    let clothes = Clothes.getClothes()
     
-    let clothes = ["Худи", "Свитшот", "Джоггеры", "Поло", "Рубашка", "Футболка", "Шорты", "Куртка", "Шапка", "Бейсболка", "Жилетка", "Кроссовки", "Ботинки", "Ветровка", "Брюки"]
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -28,16 +28,13 @@ class MainViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! CustomTableViewCell
 
-        cell.nameLabel?.text = clothes[indexPath.row]
-        cell.imageClothes?.image = UIImage(named: clothes[indexPath.row])
+        cell.nameLabel?.text = clothes[indexPath.row].name
+        cell.priceLabel.text = clothes[indexPath.row].price
+        cell.quantityLabel.text = clothes[indexPath.row].quantity
+        cell.imageClothes?.image = UIImage(named: clothes[indexPath.row].image)
+        
 
         return cell
-    }
-
-    // MARK: - Table view delegate
-    
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 85
     }
 
     /*
@@ -49,5 +46,9 @@ class MainViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    @IBAction func cancelAction(_ segue: UIStoryboardSegue) {
+        
+    }
 
 }
