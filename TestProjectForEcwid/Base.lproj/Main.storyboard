@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Root View Controller-->
+        <!--Clothes-->
         <scene sceneID="6Hh-PH-3c1">
             <objects>
                 <tableViewController id="9jY-Hd-2Uu" customClass="MainViewController" customModule="TestProjectForEcwid" customModuleProvider="target" sceneMemberID="viewController">
@@ -30,7 +30,7 @@
                             <outlet property="delegate" destination="9jY-Hd-2Uu" id="pei-eX-cFo"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="xhq-QK-Ama"/>
+                    <navigationItem key="navigationItem" title="Clothes" id="xhq-QK-Ama"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ffZ-XK-u8b" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -43,6 +43,10 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="qsE-pY-1DJ">
                         <rect key="frame" x="0.0" y="44" width="390" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="25"/>
+                            <color key="textColor" red="0.54509803921568623" green="0.0" blue="0.95686274509803915" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="9jY-Hd-2Uu" kind="relationship" relationship="rootViewController" id="W1p-qd-hQk"/>
