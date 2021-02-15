@@ -26,10 +26,10 @@ class MainViewController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! CustomTableViewCell
 
-        cell.textLabel?.text = clothes[indexPath.row]
-        cell.imageView?.image = UIImage(named: clothes[indexPath.row])
+        cell.nameLabel?.text = clothes[indexPath.row]
+        cell.imageClothes?.image = UIImage(named: clothes[indexPath.row])
 
         return cell
     }
