@@ -28,9 +28,9 @@ class DetailsViewController: UIViewController {
         priceLabel.text = clothesPrice
         qantityLabel.text = clothesQantity
         
-        deleteButton.layer.cornerRadius = 15
-        deleteButton.layer.borderWidth = 1
-        deleteButton.layer.borderColor = UIColor.black.cgColor
+//        deleteButton.layer.cornerRadius = 15
+//        deleteButton.layer.borderWidth = 1
+//        deleteButton.layer.borderColor = UIColor.black.cgColor
     }
     
     @IBAction func deleteClothesAction(_ sender: Any) {

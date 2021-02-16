@@ -159,7 +159,6 @@
                     <navigationItem key="navigationItem" id="9eH-iU-6oB"/>
                     <connections>
                         <outlet property="clothesLabel" destination="HjX-DD-dYU" id="YgC-mk-nW3"/>
-                        <outlet property="deleteButton" destination="DKD-bh-2pv" id="4jW-fE-EEq"/>
                         <outlet property="imageClothes" destination="fbx-HK-bgy" id="QmQ-yn-WHi"/>
                         <outlet property="priceLabel" destination="465-kh-a4U" id="LIX-4j-9Hu"/>
                         <outlet property="qantityLabel" destination="c8f-r0-HGV" id="OEG-rT-2Mb"/>
@@ -316,13 +315,21 @@
                     <navigationItem key="navigationItem" title="New Clothes" id="5ne-zk-9Ua">
                         <barButtonItem key="leftBarButtonItem" style="plain" systemItem="cancel" id="one-mE-4xv">
                             <connections>
-                                <segue destination="lqz-Cu-SCi" kind="unwind" unwindAction="cancelAction:" id="7Gt-CM-VjH"/>
+                                <action selector="cancelAction:" destination="jIl-oO-MQc" id="V7Y-6W-Usp"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="save" id="tBG-VK-RWc"/>
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="save" id="tBG-VK-RWc">
+                            <connections>
+                                <segue destination="lqz-Cu-SCi" kind="unwind" unwindAction="unwindSegue:" id="LzX-zC-Oan"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="imageOfClothes" destination="fAh-ze-nu2" id="lrb-B1-VCd"/>
+                        <outlet property="clothesImage" destination="fAh-ze-nu2" id="lrb-B1-VCd"/>
+                        <outlet property="clothesNameTF" destination="HT6-qA-Pzi" id="N9R-dG-V3f"/>
+                        <outlet property="priceNameTF" destination="igl-5s-Ih1" id="n5n-L2-7d9"/>
+                        <outlet property="quantityNameTF" destination="hje-gu-bG3" id="yiM-k4-8RN"/>
+                        <outlet property="saveButton" destination="tBG-VK-RWc" id="GOc-tq-H00"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mjA-df-GAm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

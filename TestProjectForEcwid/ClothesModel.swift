@@ -5,25 +5,23 @@
 //  Created by Sergei Isaikin on 15.02.2021.
 //
 
-import Foundation
+import UIKit
+import RealmSwift
 
-struct Clothes {
+class Clothes: Object {
     
-    var name: String
-    var price: String
-    var quantity: String
-    var image: String
+    @objc dynamic var name = ""
+    @objc dynamic var price: String?
+    @objc dynamic var quantity: String?
+    @objc dynamic var imageData: Data?
     
-    static let clothesName = ["Худи", "Свитшот", "Джоггеры", "Поло", "Рубашка", "Футболка", "Шорты", "Куртка", "Шапка", "Бейсболка", "Жилетка", "Кроссовки", "Ботинки", "Ветровка", "Брюки"]
-    
-    static func getClothes() -> [Clothes] {
+    convenience init(name: String, price: String?, quantity: String?, imageData: Data?) {
+        self.init()
+        self.name = name
+        self.price = price
+        self.quantity = quantity
+        self.imageData = imageData
         
-        var clothes = [Clothes]()
-        
-        for item in clothesName {
-            clothes.append(Clothes(name: item, price: "Цена: 5 500 ₽", quantity: "В наличии: 7 шт.", image: item))
-        }
-        return clothes
     }
         
 }

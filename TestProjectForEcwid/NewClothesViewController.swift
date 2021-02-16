@@ -9,12 +9,22 @@ import UIKit
 
 class NewClothesViewController: UITableViewController {
 
-    @IBOutlet weak var imageOfClothes: UIImageView!
+    var imageIsChanged = false
+    
+    @IBOutlet weak var saveButton: UIBarButtonItem!
+    @IBOutlet weak var clothesNameTF: UITextField!
+    @IBOutlet weak var priceNameTF: UITextField!
+    @IBOutlet weak var quantityNameTF: UITextField!
+    
+    
+    @IBOutlet weak var clothesImage: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         tableView.tableFooterView = UIView()
+        saveButton.isEnabled = false
+        clothesNameTF.addTarget(self, action: #selector(textFieldChanged), for: .editingChanged)
     }
     
     // MARK: - Table view delegate
@@ -52,6 +62,30 @@ class NewClothesViewController: UITableViewController {
             view.endEditing(true)
         }
     }
+    
+    func saveNewClothes() {
+        
+        var image: UIImage?
+        
+        if imageIsChanged {
+            image = clothesImage.image
+        } else {
+            image = #imageLiteral(resourceName: "clothes")
+        }
+
+        let imageData = image?.pngData()
+        
+        let newClothes = Clothes(name: clothesNameTF.text!, price: priceNameTF.text, quantity: quantityNameTF.text, imageData: imageData)
+        
+        // Сохраняем новую вещь в БД
+        RealmManager.saveObject(newClothes)
+    }
+    
+    @IBAction func cancelAction(_ sender: Any) {
+        
+        dismiss(animated: true)
+    }
+    
 }
 
     // MARK: - Text field delegate
@@ -62,6 +96,15 @@ class NewClothesViewController: UITableViewController {
         func textFieldShouldReturn(_ textField: UITextField) -> Bool {
             textField.resignFirstResponder()
             return true
+        }
+        
+        @objc private func textFieldChanged() {
+            
+            if clothesNameTF.text?.isEmpty == false {
+                saveButton.isEnabled = true
+            } else {
+                saveButton.isEnabled = false
+            }
         }
     }
 
@@ -82,9 +125,9 @@ class NewClothesViewController: UITableViewController {
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
-        imageOfClothes.image = info[.editedImage] as? UIImage
-        imageOfClothes.contentMode = .scaleAspectFill
-        imageOfClothes.clipsToBounds = true
+        clothesImage.image = info[.editedImage] as? UIImage
+        clothesImage.contentMode = .scaleAspectFill
+        clothesImage.clipsToBounds = true
         dismiss(animated: true)
     }
 }
