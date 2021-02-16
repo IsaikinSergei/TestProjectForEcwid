@@ -37,15 +37,21 @@ class MainViewController: UITableViewController {
         return cell
     }
 
-    /*
+    
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "ShowDetails" {
+            if let indexPath = self.tableView.indexPathForSelectedRow {
+                let detailsVC = segue.destination as! DetailsViewController
+                detailsVC.clothesImage = clothes[indexPath.row].image
+                detailsVC.clothesName = clothes[indexPath.row].name
+                detailsVC.clothesPrice = clothes[indexPath.row].price
+                detailsVC.clothesQantity = clothes[indexPath.row].quantity
+            }
+        }
     }
-    */
+    
     
     @IBAction func cancelAction(_ segue: UIStoryboardSegue) {
         

@@ -3,6 +3,7 @@
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -68,6 +69,7 @@
                                     <outlet property="nameLabel" destination="XFF-BH-6Uf" id="G6j-Vi-m4c"/>
                                     <outlet property="priceLabel" destination="sRZ-mZ-zYV" id="pMQ-mp-Hlg"/>
                                     <outlet property="quantityLabel" destination="a1e-PV-1vW" id="OEB-JC-vfb"/>
+                                    <segue destination="TE7-6O-VX7" kind="show" identifier="ShowDetails" id="hQJ-mR-Ycj"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -87,6 +89,85 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ffZ-XK-u8b" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="481.53846153846155" y="84.597156398104261"/>
+        </scene>
+        <!--Details View Controller-->
+        <scene sceneID="KVO-XB-fIX">
+            <objects>
+                <viewController id="TE7-6O-VX7" customClass="DetailsViewController" customModule="TestProjectForEcwid" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hAG-xW-Ft4">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fbx-HK-bgy">
+                                <rect key="frame" x="16" y="96" width="343" height="350"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="350" id="1a7-Jy-git"/>
+                                    <constraint firstAttribute="width" constant="350" id="HLJ-7j-ED4"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="358" id="UHY-gx-mQY"/>
+                                    <constraint firstAttribute="height" constant="350" id="beM-Ag-XoF"/>
+                                    <constraint firstAttribute="width" constant="358" id="fB9-BO-Ul9"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="PXB-ap-B4H">
+                                <rect key="frame" x="16" y="466" width="74.333333333333329" height="92"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HjX-DD-dYU">
+                                        <rect key="frame" x="0.0" y="0.0" width="74.333333333333329" height="24"/>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="465-kh-a4U">
+                                        <rect key="frame" x="0.0" y="34" width="74.333333333333329" height="24"/>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quantity" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c8f-r0-HGV">
+                                        <rect key="frame" x="0.0" y="68" width="74.333333333333329" height="24"/>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DKD-bh-2pv">
+                                <rect key="frame" x="145" y="592" width="85" height="50"/>
+                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="25"/>
+                                <state key="normal" title="Delete">
+                                    <color key="titleColor" red="0.54509803921568623" green="0.0" blue="0.95686274509803915" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <action selector="deleteClothesAction:" destination="TE7-6O-VX7" eventType="touchUpInside" id="ujg-qt-0Dz"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ptI-m7-b8V"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="DKD-bh-2pv" firstAttribute="leading" secondItem="ptI-m7-b8V" secondAttribute="leading" constant="145" id="07O-wd-lfz"/>
+                            <constraint firstItem="DKD-bh-2pv" firstAttribute="top" secondItem="fbx-HK-bgy" secondAttribute="bottom" constant="146" id="3T2-S4-25o"/>
+                            <constraint firstItem="fbx-HK-bgy" firstAttribute="leading" secondItem="ptI-m7-b8V" secondAttribute="leading" constant="16" id="9Qk-Wq-FgZ"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="DKD-bh-2pv" secondAttribute="bottom" constant="168" id="9dk-EL-1ZZ"/>
+                            <constraint firstItem="ptI-m7-b8V" firstAttribute="trailing" secondItem="fbx-HK-bgy" secondAttribute="trailing" constant="16" id="A6q-ta-wXl"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="DKD-bh-2pv" secondAttribute="trailing" constant="129" id="BBL-Z4-egP"/>
+                            <constraint firstItem="PXB-ap-B4H" firstAttribute="leading" secondItem="ptI-m7-b8V" secondAttribute="leading" constant="16" id="Jq2-GU-B1R"/>
+                            <constraint firstItem="fbx-HK-bgy" firstAttribute="top" secondItem="ptI-m7-b8V" secondAttribute="top" constant="8" id="ey6-9t-aWh"/>
+                            <constraint firstItem="PXB-ap-B4H" firstAttribute="top" secondItem="fbx-HK-bgy" secondAttribute="bottom" constant="20" id="hXp-Bg-0iT"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="9eH-iU-6oB"/>
+                    <connections>
+                        <outlet property="clothesLabel" destination="HjX-DD-dYU" id="YgC-mk-nW3"/>
+                        <outlet property="deleteButton" destination="DKD-bh-2pv" id="4jW-fE-EEq"/>
+                        <outlet property="imageClothes" destination="fbx-HK-bgy" id="QmQ-yn-WHi"/>
+                        <outlet property="priceLabel" destination="465-kh-a4U" id="LIX-4j-9Hu"/>
+                        <outlet property="qantityLabel" destination="c8f-r0-HGV" id="OEG-rT-2Mb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="54x-zs-R1i" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1253.8461538461538" y="458.53080568720378"/>
         </scene>
         <!--New Clothes-->
         <scene sceneID="WU7-V4-fP1">
@@ -240,11 +321,14 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="save" id="tBG-VK-RWc"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="imageOfClothes" destination="fAh-ze-nu2" id="lrb-B1-VCd"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mjA-df-GAm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="lqz-Cu-SCi" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1967.6923076923076" y="84.597156398104261"/>
+            <point key="canvasLocation" x="2063" y="-198"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="2nV-Ud-ruZ">
@@ -282,7 +366,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Teq-9J-RfL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1201.5384615384614" y="84.597156398104261"/>
+            <point key="canvasLocation" x="1254" y="-198"/>
         </scene>
     </scenes>
     <resources>
