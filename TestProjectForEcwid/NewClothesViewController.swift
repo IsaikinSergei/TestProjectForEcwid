@@ -77,7 +77,8 @@ class NewClothesViewController: UITableViewController {
         
         let newClothes = Clothes(name: clothesNameTF.text!, price: priceNameTF.text, quantity: quantityNameTF.text, imageData: imageData)
         
-        // Сохраняем новую вещь в БД
+        // Сохраняем новую вещь в БД в отдельном потоке
+//        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(3), execute:)
         RealmManager.saveObject(newClothes)
     }
     

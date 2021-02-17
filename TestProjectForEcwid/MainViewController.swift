@@ -16,8 +16,6 @@ class MainViewController: UITableViewController {
         super.viewDidLoad()
         
         clothes = realm.objects(Clothes.self)
-
-        
     }
 
     // MARK: - Table view data source
@@ -40,7 +38,16 @@ class MainViewController: UITableViewController {
         return cell
     }
 
+    // MARK: - Table view delegate
     
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        
+        if editingStyle == .delete {
+            let item = clothes[indexPath.row]
+            RealmManager.deleteObject(item)
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+        }
+    }
     // MARK: - Navigation
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -48,9 +55,7 @@ class MainViewController: UITableViewController {
             if let indexPath = self.tableView.indexPathForSelectedRow {
                 let detailsVC = segue.destination as! DetailsViewController
                 
-                // - как привести clothesImage типа String к типу Data не пойму!!!
-                
-//                detailsVC.clothesImage = clothes[indexPath.row].imageData
+                detailsVC.clothesImage = clothes[indexPath.row].imageData!
                 detailsVC.clothesName = clothes[indexPath.row].name
                 detailsVC.clothesPrice = clothes[indexPath.row].price!
                 detailsVC.clothesQantity = clothes[indexPath.row].quantity!

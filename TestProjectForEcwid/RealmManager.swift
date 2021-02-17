@@ -13,9 +13,15 @@ class RealmManager {
     
     static func saveObject(_ item: Clothes) {
         
-        try!realm.write {
+        try! realm.write {
             realm.add(item)
         }
     }
     
+    static func deleteObject(_ item: Clothes) {
+        
+        try! realm.write {
+            realm.delete(item)
+        }
+    }
 }

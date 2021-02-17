@@ -15,15 +15,16 @@ class DetailsViewController: UIViewController {
     @IBOutlet weak var qantityLabel: UILabel!
     @IBOutlet weak var deleteButton: UIButton!
     
-    var clothesImage = ""
+    var clothesImage = Data()
     var clothesName = ""
     var clothesPrice = ""
     var clothesQantity = ""
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        imageClothes.image = UIImage(named: clothesImage)
+        
+        imageClothes.image = UIImage(data: clothesImage)
         clothesLabel.text = clothesName
         priceLabel.text = clothesPrice
         qantityLabel.text = clothesQantity
@@ -34,7 +35,8 @@ class DetailsViewController: UIViewController {
     }
     
     @IBAction func deleteClothesAction(_ sender: Any) {
-    }
+        }
+    
+}
     
 
-}
