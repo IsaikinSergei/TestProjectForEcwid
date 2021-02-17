@@ -9,14 +9,13 @@ import UIKit
 
 class NewClothesViewController: UITableViewController {
 
+    var currentClothes: Clothes?
     var imageIsChanged = false
     
     @IBOutlet weak var saveButton: UIBarButtonItem!
     @IBOutlet weak var clothesNameTF: UITextField!
     @IBOutlet weak var priceNameTF: UITextField!
     @IBOutlet weak var quantityNameTF: UITextField!
-    
-    
     @IBOutlet weak var clothesImage: UIImageView!
     
     override func viewDidLoad() {
@@ -25,6 +24,7 @@ class NewClothesViewController: UITableViewController {
         tableView.tableFooterView = UIView()
         saveButton.isEnabled = false
         clothesNameTF.addTarget(self, action: #selector(textFieldChanged), for: .editingChanged)
+        setupEditClothes()
     }
     
     // MARK: - Table view delegate
@@ -63,7 +63,9 @@ class NewClothesViewController: UITableViewController {
         }
     }
     
-    func saveNewClothes() {
+    // Создаем метод который сохраняет новые элементы и отредактированные
+    
+    func saveClothes() {
         
         var image: UIImage?
         
@@ -77,9 +79,49 @@ class NewClothesViewController: UITableViewController {
         
         let newClothes = Clothes(name: clothesNameTF.text!, price: priceNameTF.text, quantity: quantityNameTF.text, imageData: imageData)
         
-        // Сохраняем новую вещь в БД в отдельном потоке
-//        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(3), execute:)
-        RealmManager.saveObject(newClothes)
+        if currentClothes != nil {
+            try! realm.write {
+                currentClothes?.name = newClothes.name
+                currentClothes?.price = newClothes.price
+                currentClothes?.quantity = newClothes.quantity
+                currentClothes?.imageData = newClothes.imageData
+            }
+        } else {
+            // Сохраняем новую вещь в БД в отдельном потоке
+    //        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(3), execute:)
+            RealmManager.saveObject(newClothes)
+        }
+    }
+    
+    // Создаем метод для передачи текущих данных выбранной ячейки для отображения и редактирования в отдельном экране
+    
+    private func setupEditClothes() {
+        if currentClothes != nil {
+            
+            setupNavigationBar()
+            imageIsChanged = true
+            
+            guard let data = currentClothes?.imageData,
+                  let image = UIImage(data: data) else { return }
+            
+            clothesImage.image = image
+            clothesImage.contentMode = .scaleAspectFit
+            clothesNameTF.text = currentClothes?.name
+            priceNameTF.text = currentClothes?.price
+            quantityNameTF.text = currentClothes?.quantity
+        }
+    }
+    
+    // Работаем над NavigationBar для редактирования данных выбранной ячейки
+    
+    private func setupNavigationBar() {
+        if let topItem = navigationController?.navigationBar.topItem {
+            topItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        }
+        navigationItem.leftBarButtonItem = nil
+        title = currentClothes?.name
+        saveButton.isEnabled = true
+        
     }
     
     @IBAction func cancelAction(_ sender: Any) {

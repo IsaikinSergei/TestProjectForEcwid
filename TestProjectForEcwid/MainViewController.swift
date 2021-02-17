@@ -51,15 +51,12 @@ class MainViewController: UITableViewController {
     // MARK: - Navigation
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "ShowDetails" {
-            if let indexPath = self.tableView.indexPathForSelectedRow {
-                let detailsVC = segue.destination as! DetailsViewController
+        if segue.identifier == "showDetails" {
+            guard let indexPath = tableView.indexPathForSelectedRow else { return }
+                let item = clothes[indexPath.row]
+                let newClothesVC = segue.destination as! NewClothesViewController
                 
-                detailsVC.clothesImage = clothes[indexPath.row].imageData!
-                detailsVC.clothesName = clothes[indexPath.row].name
-                detailsVC.clothesPrice = clothes[indexPath.row].price!
-                detailsVC.clothesQantity = clothes[indexPath.row].quantity!
-            }
+            newClothesVC.currentClothes = item
         }
     }
     
@@ -67,7 +64,7 @@ class MainViewController: UITableViewController {
     @IBAction func unwindSegue(_ segue: UIStoryboardSegue) {
         
         guard let newClothesVC = segue.source as? NewClothesViewController else { return }
-        newClothesVC.saveNewClothes()
+        newClothesVC.saveClothes()
         tableView.reloadData()
         
     }
