@@ -3,7 +3,6 @@
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -90,84 +89,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ffZ-XK-u8b" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="481.53846153846155" y="84.597156398104261"/>
-        </scene>
-        <!--Details View Controller-->
-        <scene sceneID="KVO-XB-fIX">
-            <objects>
-                <viewController id="TE7-6O-VX7" customClass="DetailsViewController" customModule="TestProjectForEcwid" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="hAG-xW-Ft4">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fbx-HK-bgy">
-                                <rect key="frame" x="16" y="52" width="358" height="350"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="350" id="1a7-Jy-git"/>
-                                    <constraint firstAttribute="width" constant="350" id="HLJ-7j-ED4"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="358" id="UHY-gx-mQY"/>
-                                    <constraint firstAttribute="height" constant="350" id="beM-Ag-XoF"/>
-                                    <constraint firstAttribute="width" constant="358" id="fB9-BO-Ul9"/>
-                                </constraints>
-                            </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="PXB-ap-B4H">
-                                <rect key="frame" x="16" y="422" width="74.333333333333329" height="92"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HjX-DD-dYU">
-                                        <rect key="frame" x="0.0" y="0.0" width="74.333333333333329" height="24"/>
-                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="20"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="465-kh-a4U">
-                                        <rect key="frame" x="0.0" y="34" width="74.333333333333329" height="24"/>
-                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="20"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quantity" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c8f-r0-HGV">
-                                        <rect key="frame" x="0.0" y="68" width="74.333333333333329" height="24"/>
-                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="20"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                            </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DKD-bh-2pv">
-                                <rect key="frame" x="145" y="548" width="100" height="94"/>
-                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="25"/>
-                                <state key="normal" title="Delete">
-                                    <color key="titleColor" red="0.54509803921568623" green="0.0" blue="0.95686274509803915" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                </state>
-                                <connections>
-                                    <action selector="deleteClothesAction:" destination="TE7-6O-VX7" eventType="touchUpInside" id="ujg-qt-0Dz"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="ptI-m7-b8V"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="DKD-bh-2pv" firstAttribute="leading" secondItem="ptI-m7-b8V" secondAttribute="leading" constant="145" id="07O-wd-lfz"/>
-                            <constraint firstItem="DKD-bh-2pv" firstAttribute="top" secondItem="fbx-HK-bgy" secondAttribute="bottom" constant="146" id="3T2-S4-25o"/>
-                            <constraint firstItem="fbx-HK-bgy" firstAttribute="leading" secondItem="ptI-m7-b8V" secondAttribute="leading" constant="16" id="9Qk-Wq-FgZ"/>
-                            <constraint firstAttribute="bottomMargin" secondItem="DKD-bh-2pv" secondAttribute="bottom" constant="168" id="9dk-EL-1ZZ"/>
-                            <constraint firstItem="ptI-m7-b8V" firstAttribute="trailing" secondItem="fbx-HK-bgy" secondAttribute="trailing" constant="16" id="A6q-ta-wXl"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="DKD-bh-2pv" secondAttribute="trailing" constant="129" id="BBL-Z4-egP"/>
-                            <constraint firstItem="PXB-ap-B4H" firstAttribute="leading" secondItem="ptI-m7-b8V" secondAttribute="leading" constant="16" id="Jq2-GU-B1R"/>
-                            <constraint firstItem="fbx-HK-bgy" firstAttribute="top" secondItem="ptI-m7-b8V" secondAttribute="top" constant="8" id="ey6-9t-aWh"/>
-                            <constraint firstItem="PXB-ap-B4H" firstAttribute="top" secondItem="fbx-HK-bgy" secondAttribute="bottom" constant="20" id="hXp-Bg-0iT"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="9eH-iU-6oB"/>
-                    <connections>
-                        <outlet property="clothesLabel" destination="HjX-DD-dYU" id="YgC-mk-nW3"/>
-                        <outlet property="imageClothes" destination="fbx-HK-bgy" id="QmQ-yn-WHi"/>
-                        <outlet property="priceLabel" destination="465-kh-a4U" id="LIX-4j-9Hu"/>
-                        <outlet property="qantityLabel" destination="c8f-r0-HGV" id="OEG-rT-2Mb"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="54x-zs-R1i" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="482" y="739"/>
         </scene>
         <!--New Clothes-->
         <scene sceneID="WU7-V4-fP1">

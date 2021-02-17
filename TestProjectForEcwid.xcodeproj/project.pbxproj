@@ -17,7 +17,6 @@
 		EAF2946225DA89FD00305F5B /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF2946125DA89FD00305F5B /* CustomTableViewCell.swift */; };
 		EAF2946625DAB98D00305F5B /* ClothesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF2946525DAB98D00305F5B /* ClothesModel.swift */; };
 		EAF2946C25DADEE900305F5B /* NewClothesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF2946B25DADEE900305F5B /* NewClothesViewController.swift */; };
-		EAF2947025DB25D300305F5B /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF2946F25DB25D300305F5B /* DetailsViewController.swift */; };
 		EAF2947425DC288200305F5B /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF2947325DC288200305F5B /* RealmManager.swift */; };
 /* End PBXBuildFile section */
 
@@ -36,7 +35,6 @@
 		EAF2946125DA89FD00305F5B /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		EAF2946525DAB98D00305F5B /* ClothesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClothesModel.swift; sourceTree = "<group>"; };
 		EAF2946B25DADEE900305F5B /* NewClothesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewClothesViewController.swift; sourceTree = "<group>"; };
-		EAF2946F25DB25D300305F5B /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		EAF2947325DC288200305F5B /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -97,7 +95,6 @@
 				EAF2947325DC288200305F5B /* RealmManager.swift */,
 				EAF2945D25DA6AA700305F5B /* MainViewController.swift */,
 				EAF2946B25DADEE900305F5B /* NewClothesViewController.swift */,
-				EAF2946F25DB25D300305F5B /* DetailsViewController.swift */,
 				EAF2944525D9C84600305F5B /* Main.storyboard */,
 				EAF2944825D9C84900305F5B /* Assets.xcassets */,
 				EAF2944A25D9C84900305F5B /* LaunchScreen.storyboard */,
@@ -225,7 +222,6 @@
 				EAF2945E25DA6AA700305F5B /* MainViewController.swift in Sources */,
 				EAF2944025D9C84600305F5B /* AppDelegate.swift in Sources */,
 				EAF2946225DA89FD00305F5B /* CustomTableViewCell.swift in Sources */,
-				EAF2947025DB25D300305F5B /* DetailsViewController.swift in Sources */,
 				EAF2946C25DADEE900305F5B /* NewClothesViewController.swift in Sources */,
 				EAF2944225D9C84600305F5B /* SceneDelegate.swift in Sources */,
 			);
