@@ -9,18 +9,38 @@ import UIKit
 import RealmSwift
 
 class MainViewController: UITableViewController {
-        
-    var clothes: Results<Clothes>!
+    
+    private let searchController = UISearchController(searchResultsController: nil)
+    private var clothes: Results<Clothes>!
+    private var filteredClothes: Results<Clothes>!
+    private var searchBarIsEmpty: Bool {
+        guard let text = searchController.searchBar.text else { return false}
+        return text.isEmpty
+    }
+    private var isFiltering: Bool {
+        return searchController.isActive && !searchBarIsEmpty
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         clothes = realm.objects(Clothes.self)
+        
+        // Setup the SearchController
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "Поиск"
+        navigationItem.searchController = searchController
+        definesPresentationContext = true
+        
     }
 
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if isFiltering {
+            return filteredClothes.count
+        }
         return clothes.isEmpty ? 0 : clothes.count
     }
 
@@ -28,7 +48,12 @@ class MainViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! CustomTableViewCell
 
-        let clothed = clothes[indexPath.row]
+        var clothed = Clothes()
+        if isFiltering {
+            clothed = filteredClothes[indexPath.row]
+        } else {
+            clothed = clothes[indexPath.row]
+        }
 
         cell.nameLabel.text = clothed.name
         cell.priceLabel.text = clothed.price
@@ -53,7 +78,12 @@ class MainViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showDetails" {
             guard let indexPath = tableView.indexPathForSelectedRow else { return }
-                let item = clothes[indexPath.row]
+            let item: Clothes
+            if isFiltering {
+                item = filteredClothes[indexPath.row]
+            } else {
+                item = clothes[indexPath.row]
+            }
                 let newClothesVC = segue.destination as! NewClothesViewController
                 
             newClothesVC.currentClothes = item
@@ -69,4 +99,16 @@ class MainViewController: UITableViewController {
         
     }
 
+}
+
+extension MainViewController: UISearchResultsUpdating {
+    
+    func updateSearchResults(for searchController: UISearchController) {
+        filterContentText(searchController.searchBar.text!)
+    }
+    // Создаем метод для фильтрации содержимого ячеек по имени
+    private func filterContentText(_ text: String) {
+        filteredClothes = clothes.filter("name CONTAINS[c] %@ OR price CONTAINS[c] %@", text, text)
+        tableView.reloadData()
+    }
 }
