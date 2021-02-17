@@ -88,19 +88,59 @@
 		EAF2943E25D9C84600305F5B /* TestProjectForEcwid */ = {
 			isa = PBXGroup;
 			children = (
-				EAF2943F25D9C84600305F5B /* AppDelegate.swift */,
-				EAF2944125D9C84600305F5B /* SceneDelegate.swift */,
-				EAF2946125DA89FD00305F5B /* CustomTableViewCell.swift */,
-				EAF2946525DAB98D00305F5B /* ClothesModel.swift */,
-				EAF2947325DC288200305F5B /* RealmManager.swift */,
-				EAF2945D25DA6AA700305F5B /* MainViewController.swift */,
-				EAF2946B25DADEE900305F5B /* NewClothesViewController.swift */,
-				EAF2944525D9C84600305F5B /* Main.storyboard */,
-				EAF2944825D9C84900305F5B /* Assets.xcassets */,
-				EAF2944A25D9C84900305F5B /* LaunchScreen.storyboard */,
-				EAF2944D25D9C84900305F5B /* Info.plist */,
+				EAF2947725DDA21D00305F5B /* ViewControllers */,
+				EAF2947925DDA28C00305F5B /* Helpers */,
+				EAF2947825DDA26700305F5B /* Models */,
+				EAF2947B25DDA42800305F5B /* SupportFiles */,
+				EAF2947A25DDA36500305F5B /* IBuilder */,
 			);
 			path = TestProjectForEcwid;
+			sourceTree = "<group>";
+		};
+		EAF2947725DDA21D00305F5B /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				EAF2945D25DA6AA700305F5B /* MainViewController.swift */,
+				EAF2946B25DADEE900305F5B /* NewClothesViewController.swift */,
+				EAF2946125DA89FD00305F5B /* CustomTableViewCell.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		EAF2947825DDA26700305F5B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				EAF2946525DAB98D00305F5B /* ClothesModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		EAF2947925DDA28C00305F5B /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				EAF2947325DC288200305F5B /* RealmManager.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		EAF2947A25DDA36500305F5B /* IBuilder */ = {
+			isa = PBXGroup;
+			children = (
+				EAF2944525D9C84600305F5B /* Main.storyboard */,
+				EAF2944A25D9C84900305F5B /* LaunchScreen.storyboard */,
+			);
+			path = IBuilder;
+			sourceTree = "<group>";
+		};
+		EAF2947B25DDA42800305F5B /* SupportFiles */ = {
+			isa = PBXGroup;
+			children = (
+				EAF2943F25D9C84600305F5B /* AppDelegate.swift */,
+				EAF2944125D9C84600305F5B /* SceneDelegate.swift */,
+				EAF2944825D9C84900305F5B /* Assets.xcassets */,
+				EAF2944D25D9C84900305F5B /* Info.plist */,
+			);
+			path = SupportFiles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -372,7 +412,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = TestProjectForEcwid/Info.plist;
+				INFOPLIST_FILE = TestProjectForEcwid/SupportFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -391,7 +431,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = TestProjectForEcwid/Info.plist;
+				INFOPLIST_FILE = TestProjectForEcwid/SupportFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
