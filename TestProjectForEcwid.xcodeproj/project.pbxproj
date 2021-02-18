@@ -18,6 +18,10 @@
 		EAF2946625DAB98D00305F5B /* ClothesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF2946525DAB98D00305F5B /* ClothesModel.swift */; };
 		EAF2946C25DADEE900305F5B /* NewClothesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF2946B25DADEE900305F5B /* NewClothesViewController.swift */; };
 		EAF2947425DC288200305F5B /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF2947325DC288200305F5B /* RealmManager.swift */; };
+		EAF2948325DEDAFD00305F5B /* Снимок экрана 2021-02-18 в 21.25.16.png in Resources */ = {isa = PBXBuildFile; fileRef = EAF2947F25DEDAFB00305F5B /* Снимок экрана 2021-02-18 в 21.25.16.png */; };
+		EAF2948425DEDAFD00305F5B /* Снимок экрана 2021-02-18 в 21.11.14.png in Resources */ = {isa = PBXBuildFile; fileRef = EAF2948025DEDAFC00305F5B /* Снимок экрана 2021-02-18 в 21.11.14.png */; };
+		EAF2948525DEDAFD00305F5B /* Снимок экрана 2021-02-18 в 21.10.13.png in Resources */ = {isa = PBXBuildFile; fileRef = EAF2948125DEDAFC00305F5B /* Снимок экрана 2021-02-18 в 21.10.13.png */; };
+		EAF2948625DEDAFD00305F5B /* Снимок экрана 2021-02-18 в 21.10.36.png in Resources */ = {isa = PBXBuildFile; fileRef = EAF2948225DEDAFD00305F5B /* Снимок экрана 2021-02-18 в 21.10.36.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +40,10 @@
 		EAF2946525DAB98D00305F5B /* ClothesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClothesModel.swift; sourceTree = "<group>"; };
 		EAF2946B25DADEE900305F5B /* NewClothesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewClothesViewController.swift; sourceTree = "<group>"; };
 		EAF2947325DC288200305F5B /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
+		EAF2947F25DEDAFB00305F5B /* Снимок экрана 2021-02-18 в 21.25.16.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Снимок экрана 2021-02-18 в 21.25.16.png"; sourceTree = "<group>"; };
+		EAF2948025DEDAFC00305F5B /* Снимок экрана 2021-02-18 в 21.11.14.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Снимок экрана 2021-02-18 в 21.11.14.png"; sourceTree = "<group>"; };
+		EAF2948125DEDAFC00305F5B /* Снимок экрана 2021-02-18 в 21.10.13.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Снимок экрана 2021-02-18 в 21.10.13.png"; sourceTree = "<group>"; };
+		EAF2948225DEDAFD00305F5B /* Снимок экрана 2021-02-18 в 21.10.36.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Снимок экрана 2021-02-18 в 21.10.36.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +79,7 @@
 			isa = PBXGroup;
 			children = (
 				EAF2943E25D9C84600305F5B /* TestProjectForEcwid */,
+				EAF2947D25DEDA1B00305F5B /* Screenshots */,
 				EAF2943D25D9C84600305F5B /* Products */,
 				45EB14C8F9F5C8EB098EA68A /* Pods */,
 				D76CA63825F51BEFDFC179A4 /* Frameworks */,
@@ -143,6 +152,17 @@
 			path = SupportFiles;
 			sourceTree = "<group>";
 		};
+		EAF2947D25DEDA1B00305F5B /* Screenshots */ = {
+			isa = PBXGroup;
+			children = (
+				EAF2948125DEDAFC00305F5B /* Снимок экрана 2021-02-18 в 21.10.13.png */,
+				EAF2948225DEDAFD00305F5B /* Снимок экрана 2021-02-18 в 21.10.36.png */,
+				EAF2948025DEDAFC00305F5B /* Снимок экрана 2021-02-18 в 21.11.14.png */,
+				EAF2947F25DEDAFB00305F5B /* Снимок экрана 2021-02-18 в 21.25.16.png */,
+			);
+			path = Screenshots;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -203,8 +223,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				EAF2944C25D9C84900305F5B /* LaunchScreen.storyboard in Resources */,
+				EAF2948325DEDAFD00305F5B /* Снимок экрана 2021-02-18 в 21.25.16.png in Resources */,
+				EAF2948525DEDAFD00305F5B /* Снимок экрана 2021-02-18 в 21.10.13.png in Resources */,
 				EAF2944925D9C84900305F5B /* Assets.xcassets in Resources */,
 				EAF2944725D9C84600305F5B /* Main.storyboard in Resources */,
+				EAF2948625DEDAFD00305F5B /* Снимок экрана 2021-02-18 в 21.10.36.png in Resources */,
+				EAF2948425DEDAFD00305F5B /* Снимок экрана 2021-02-18 в 21.11.14.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
