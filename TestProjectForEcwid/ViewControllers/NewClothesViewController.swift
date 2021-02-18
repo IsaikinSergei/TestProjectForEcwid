@@ -8,7 +8,7 @@
 import UIKit
 
 class NewClothesViewController: UITableViewController {
-
+    
     var currentClothes: Clothes?
     var imageIsChanged = false
     
@@ -20,7 +20,7 @@ class NewClothesViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         tableView.tableFooterView = UIView()
         saveButton.isEnabled = false
         clothesNameTF.addTarget(self, action: #selector(textFieldChanged), for: .editingChanged)
@@ -63,7 +63,7 @@ class NewClothesViewController: UITableViewController {
         }
     }
     
-    // Создаем метод который сохраняет новые элементы и отредактированные
+    // Создаем метод который сохраняет новые и отредактированные товары
     
     func saveClothes() {
         
@@ -74,23 +74,23 @@ class NewClothesViewController: UITableViewController {
         } else {
             image = #imageLiteral(resourceName: "clothes")
         }
-
+        
         let imageData = image?.pngData()
         
-        let newClothes = Clothes(name: clothesNameTF.text!, price: priceNameTF.text, quantity: quantityNameTF.text, imageData: imageData)
+        let newClothes = Clothes(name: self.clothesNameTF.text!, price: self.priceNameTF.text, quantity: self.quantityNameTF.text, imageData: imageData)
         
-        if currentClothes != nil {
+        
+        if self.currentClothes != nil {
             try! realm.write {
-                currentClothes?.name = newClothes.name
-                currentClothes?.price = newClothes.price
-                currentClothes?.quantity = newClothes.quantity
-                currentClothes?.imageData = newClothes.imageData
+                self.currentClothes?.name = newClothes.name
+                self.currentClothes?.price = newClothes.price
+                self.currentClothes?.quantity = newClothes.quantity
+                self.currentClothes?.imageData = newClothes.imageData
             }
         } else {
-            // Сохраняем новую вещь в БД в отдельном потоке
-    //        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(3), execute:)
             RealmManager.saveObject(newClothes)
         }
+        
     }
     
     // Создаем метод для передачи текущих данных выбранной ячейки для отображения и редактирования в отдельном экране
@@ -131,29 +131,29 @@ class NewClothesViewController: UITableViewController {
     
 }
 
-    // MARK: - Text field delegate
+// MARK: - Text field delegate
 
-    extension NewClothesViewController: UITextFieldDelegate {
-        // Скрываем клавиатуру по нажатию на кнопку Done
+extension NewClothesViewController: UITextFieldDelegate {
+    // Скрываем клавиатуру по нажатию на кнопку Done
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    @objc private func textFieldChanged() {
         
-        func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-            textField.resignFirstResponder()
-            return true
-        }
-        
-        @objc private func textFieldChanged() {
-            
-            if clothesNameTF.text?.isEmpty == false {
-                saveButton.isEnabled = true
-            } else {
-                saveButton.isEnabled = false
-            }
+        if clothesNameTF.text?.isEmpty == false {
+            saveButton.isEnabled = true
+        } else {
+            saveButton.isEnabled = false
         }
     }
+}
 
-    // MARK: - Work with image
+// MARK: - Work with image
 
-    extension NewClothesViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+extension NewClothesViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     func chooseImagePicker(source: UIImagePickerController.SourceType) {
         
@@ -174,3 +174,4 @@ class NewClothesViewController: UITableViewController {
         dismiss(animated: true)
     }
 }
+

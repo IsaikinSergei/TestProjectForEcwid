@@ -16,7 +16,7 @@ class RealmManager {
         try! realm.write {
             realm.add(item)
         }
-    }
+}
     
     static func deleteObject(_ item: Clothes) {
         
