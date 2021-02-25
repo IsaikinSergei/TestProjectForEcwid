@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		CCCCF8F14D4C646F57458CE9 /* Pods_TestProjectForEcwid.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C73EF55B0EEA3A65B8089E2 /* Pods_TestProjectForEcwid.framework */; };
+		EA5260B425E851FD001973B9 /* Снимок экрана 2021-02-26 в 01.44.15.png in Resources */ = {isa = PBXBuildFile; fileRef = EA5260B325E851FD001973B9 /* Снимок экрана 2021-02-26 в 01.44.15.png */; };
 		EAF2944025D9C84600305F5B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF2943F25D9C84600305F5B /* AppDelegate.swift */; };
 		EAF2944225D9C84600305F5B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF2944125D9C84600305F5B /* SceneDelegate.swift */; };
 		EAF2944725D9C84600305F5B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAF2944525D9C84600305F5B /* Main.storyboard */; };
@@ -28,6 +29,7 @@
 		1C73EF55B0EEA3A65B8089E2 /* Pods_TestProjectForEcwid.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TestProjectForEcwid.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D52628F50E1951E72B41BAE /* Pods-TestProjectForEcwid.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestProjectForEcwid.release.xcconfig"; path = "Target Support Files/Pods-TestProjectForEcwid/Pods-TestProjectForEcwid.release.xcconfig"; sourceTree = "<group>"; };
 		D177CFCDB500380CC09C59AD /* Pods-TestProjectForEcwid.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestProjectForEcwid.debug.xcconfig"; path = "Target Support Files/Pods-TestProjectForEcwid/Pods-TestProjectForEcwid.debug.xcconfig"; sourceTree = "<group>"; };
+		EA5260B325E851FD001973B9 /* Снимок экрана 2021-02-26 в 01.44.15.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Снимок экрана 2021-02-26 в 01.44.15.png"; sourceTree = "<group>"; };
 		EAF2943C25D9C84600305F5B /* TestProjectForEcwid.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestProjectForEcwid.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAF2943F25D9C84600305F5B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EAF2944125D9C84600305F5B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -157,6 +159,7 @@
 			children = (
 				EAF2948125DEDAFC00305F5B /* Снимок экрана 2021-02-18 в 21.10.13.png */,
 				EAF2948225DEDAFD00305F5B /* Снимок экрана 2021-02-18 в 21.10.36.png */,
+				EA5260B325E851FD001973B9 /* Снимок экрана 2021-02-26 в 01.44.15.png */,
 				EAF2948025DEDAFC00305F5B /* Снимок экрана 2021-02-18 в 21.11.14.png */,
 				EAF2947F25DEDAFB00305F5B /* Снимок экрана 2021-02-18 в 21.25.16.png */,
 			);
@@ -228,6 +231,7 @@
 				EAF2944925D9C84900305F5B /* Assets.xcassets in Resources */,
 				EAF2944725D9C84600305F5B /* Main.storyboard in Resources */,
 				EAF2948625DEDAFD00305F5B /* Снимок экрана 2021-02-18 в 21.10.36.png in Resources */,
+				EA5260B425E851FD001973B9 /* Снимок экрана 2021-02-26 в 01.44.15.png in Resources */,
 				EAF2948425DEDAFD00305F5B /* Снимок экрана 2021-02-18 в 21.11.14.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

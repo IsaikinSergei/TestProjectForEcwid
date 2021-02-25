@@ -78,7 +78,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Clothes" id="xhq-QK-Ama">
-                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="FeT-CA-mxI">
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="add" id="FeT-CA-mxI">
                             <color key="tintColor" red="0.60392156862745094" green="0.0" blue="0.99607843137254903" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <connections>
                                 <segue destination="ECM-2k-1SW" kind="presentation" modalTransitionStyle="coverVertical" id="Szx-aD-kNL"/>
@@ -235,13 +235,13 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="New Clothes" id="5ne-zk-9Ua">
-                        <barButtonItem key="leftBarButtonItem" style="plain" systemItem="cancel" id="one-mE-4xv">
+                        <barButtonItem key="leftBarButtonItem" style="done" systemItem="cancel" id="one-mE-4xv">
                             <color key="tintColor" red="0.60392156862745094" green="0.0" blue="0.99607843137254903" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <connections>
                                 <action selector="cancelAction:" destination="jIl-oO-MQc" id="V7Y-6W-Usp"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="save" id="tBG-VK-RWc">
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="save" id="tBG-VK-RWc">
                             <color key="tintColor" red="0.60392156862745094" green="0.0" blue="0.99607843137254903" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <connections>
                                 <segue destination="lqz-Cu-SCi" kind="unwind" unwindAction="unwindSegue:" id="LzX-zC-Oan"/>
